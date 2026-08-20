@@ -1,0 +1,57 @@
+import {
+  Bot,
+  BookOpen,
+  CheckCircle2,
+  Clock,
+  Download,
+  Facebook,
+  FlaskConical,
+  GraduationCap,
+  Hotel,
+  Instagram,
+  LayoutDashboard,
+  Mail,
+  MessageSquareHeart,
+  QrCode,
+  Repeat,
+  Rocket,
+  ShoppingCart,
+  Sparkles,
+  Store,
+  UtensilsCrossed,
+  Users,
+  Wallet,
+  Zap,
+  type LucideIcon,
+} from 'lucide-react';
+
+const MAP: Record<string, LucideIcon> = {
+  bot: Bot,
+  cart: ShoppingCart,
+  qr: QrCode,
+  check: CheckCircle2,
+  dashboard: LayoutDashboard,
+  book: BookOpen,
+  store: Store,
+  graduation: GraduationCap,
+  utensils: UtensilsCrossed,
+  sparkles: Sparkles,
+  hotel: Hotel,
+  download: Download,
+  clock: Clock,
+  zap: Zap,
+  repeat: Repeat,
+  wallet: Wallet,
+  users: Users,
+  rocket: Rocket,
+  flask: FlaskConical,
+  message: MessageSquareHeart,
+  mail: Mail,
+  facebook: Facebook,
+  instagram: Instagram,
+};
+
+export function Icon({ name, className }: { name: string; className?: string }) {
+  const Cmp = MAP[name] ?? Sparkles;
+  return <Cmp className={className} aria-hidden="true" />;
+}

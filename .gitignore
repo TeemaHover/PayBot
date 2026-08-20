@@ -1,0 +1,23 @@
+# dependencies
+node_modules
+
+# next.js
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+
+# production data (contains personal information — never commit)
+data/waitlist.json
+
+# env
+.env
+.env*.local
+
+# archived reference build from a different product (kept locally only)
+archive/
+
+# os / editor
+.DS_Store
+Thumbs.db
+*.log
