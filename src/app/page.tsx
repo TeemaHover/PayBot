@@ -1,4 +1,5 @@
 import { Navbar } from '@/components/Navbar';
+import { Reveal } from '@/components/Reveal';
 import { Hero } from '@/components/sections/Hero';
 import { Problem } from '@/components/sections/Problem';
 import { BeforeAfter } from '@/components/sections/BeforeAfter';
@@ -23,18 +24,41 @@ export default function HomePage() {
     <>
       <Navbar />
       <main>
+        {/* Hero нь өөрийн CSS entrance хөдөлгөөнтэй тул Reveal-д ороогүй. */}
         <Hero />
-        <Problem />
-        <BeforeAfter />
-        <HowItWorks />
-        <ProductShowcase />
-        <Features />
-        <UseCases />
-        <Benefits />
-        <EarlyAccess />
-        <EarlyAccessPerks />
-        <Faq />
-        <FinalCta />
+        <Reveal>
+          <Problem />
+        </Reveal>
+        <Reveal>
+          <BeforeAfter />
+        </Reveal>
+        <Reveal>
+          <HowItWorks />
+        </Reveal>
+        <Reveal>
+          <ProductShowcase />
+        </Reveal>
+        <Reveal>
+          <Features />
+        </Reveal>
+        <Reveal>
+          <UseCases />
+        </Reveal>
+        <Reveal>
+          <Benefits />
+        </Reveal>
+        <Reveal>
+          <EarlyAccess />
+        </Reveal>
+        <Reveal>
+          <EarlyAccessPerks />
+        </Reveal>
+        <Reveal>
+          <Faq />
+        </Reveal>
+        <Reveal>
+          <FinalCta />
+        </Reveal>
       </main>
       <Footer />
     </>
