@@ -13,11 +13,11 @@ export function Features() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 stagger-grid grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((f) => (
             <article
               key={f.no}
-              className="card group relative overflow-hidden p-6 transition hover:border-brand-300"
+              className="card card-lift group relative overflow-hidden p-6"
             >
               <span
                 className="pointer-events-none absolute -right-6 -top-8 text-7xl font-bold text-ink-100 transition group-hover:text-brand-100"

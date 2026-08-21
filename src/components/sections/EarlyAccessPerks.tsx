@@ -9,7 +9,7 @@ export function EarlyAccessPerks() {
           <h2 className="h2">{EARLY_ACCESS_PERKS.title}</h2>
         </div>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
+        <div className="mt-12 stagger-grid grid gap-4 md:grid-cols-3">
           {EARLY_ACCESS_PERKS.items.map((p, i) => (
             <article key={p.title} className="card relative p-6">
               <span className="absolute right-5 top-5 text-xs font-bold tabular-nums text-ink-400">

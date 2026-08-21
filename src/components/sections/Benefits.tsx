@@ -10,7 +10,7 @@ export function Benefits() {
           <h2 className="mt-5 h2">{BENEFITS.title}</h2>
         </div>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 stagger-grid grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {BENEFITS.items.map((b, i) => (
             <article
               key={b.title}

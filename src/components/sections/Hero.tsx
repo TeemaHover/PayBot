@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, MessageCircle, Bot, QrCode, CheckCircle2 } from 'lucide-react';
 import { HERO } from '@/lib/content';
 import { ChatMockup, PhoneFrame, type Bubble } from '@/components/mockups/ChatMockup';
+import { Parallax } from '@/components/Parallax';
 
 const CONVERSATION: Bubble[] = [
   { from: 'user', text: 'Сайн байна уу? Энэ цамц M размертай юу?' },
@@ -34,9 +35,11 @@ export function Hero() {
             Early access — тун удахгүй
           </span>
 
-          <h1 className="rise rise-d1 mt-6 text-[2.6rem] font-bold leading-[1.1] tracking-tight sm:text-6xl">
-            Мессеж бүрийг{' '}
-            <span className="text-gradient text-gradient-animate">борлуулалт</span> болго.
+          <h1 className="mt-6 text-[2.6rem] font-bold leading-[1.1] tracking-tight sm:text-6xl">
+            <span className="word word-1">Мессеж</span>{' '}
+            <span className="word word-2">бүрийг</span>{' '}
+            <span className="word word-3 text-gradient text-gradient-animate">борлуулалт</span>{' '}
+            <span className="word word-4">болго.</span>
           </h1>
 
           <p className="rise rise-d2 mt-6 max-w-xl lead">{HERO.description}</p>
@@ -74,10 +77,10 @@ export function Hero() {
 
         <div className="rise rise-d3 relative">
           <div
-            className="pointer-events-none absolute -inset-6 rounded-full bg-brand-100 blur-3xl"
+            className="glow-pulse pointer-events-none absolute -inset-6 rounded-full bg-brand-100 blur-3xl"
             aria-hidden="true"
           />
-          <div className="relative">
+          <Parallax className="relative" strength={12}>
             <div className="float-slow">
               <PhoneFrame>
                 <ChatMockup bubbles={CONVERSATION} title="Ариунаа" subtitle="Messenger чат" />
@@ -91,7 +94,7 @@ export function Hero() {
                 <CheckCircle2 className="h-3 w-3" /> Төлбөр баталгаажсан
               </p>
             </div>
-          </div>
+          </Parallax>
         </div>
       </div>
     </section>
