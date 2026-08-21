@@ -14,14 +14,14 @@ export function UseCases() {
           {USE_CASES.map((u) => (
             <article
               key={u.title}
-              className="card flex gap-4 p-6 transition hover:border-brand-500/40 hover:bg-ink-800/60"
+              className="card flex gap-4 p-6 transition hover:border-brand-300 hover:bg-ink-50"
             >
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand-500/25 to-aqua-400/10 text-brand-200">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand-500/25 to-aqua-400/10 text-brand-700">
                 <Icon name={u.icon} className="h-5 w-5" />
               </span>
               <div>
                 <h3 className="text-base font-semibold">{u.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-white/55">{u.body}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-ink-600">{u.body}</p>
               </div>
             </article>
           ))}

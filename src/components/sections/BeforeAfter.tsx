@@ -17,22 +17,22 @@ function Column({
       className={clsx(
         'rounded-2xl border p-6 sm:p-7',
         isAfter
-          ? 'border-brand-500/40 bg-gradient-to-b from-brand-500/10 to-transparent shadow-glow'
-          : 'border-ink-700 bg-ink-850/60',
+          ? 'border-brand-300 bg-gradient-to-b from-brand-500/10 to-transparent shadow-glow'
+          : 'border-ink-200 bg-ink-50',
       )}
     >
       <div className="flex items-center gap-2.5">
         <span
           className={clsx(
             'grid h-9 w-9 place-items-center rounded-xl',
-            isAfter ? 'bg-brand-500/20 text-brand-200' : 'bg-ink-700 text-white/50',
+            isAfter ? 'bg-brand-100 text-brand-700' : 'bg-ink-100 text-ink-500',
           )}
         >
           {isAfter ? <Bot className="h-4 w-4" /> : <User className="h-4 w-4" />}
         </span>
-        <h3 className={clsx('text-lg font-semibold', isAfter && 'text-brand-100')}>{label}</h3>
+        <h3 className={clsx('text-lg font-semibold', isAfter && 'text-brand-700')}>{label}</h3>
         {isAfter && (
-          <span className="ml-auto rounded-full bg-mint-400/15 px-2.5 py-1 text-[11px] font-semibold text-mint-400">
+          <span className="ml-auto rounded-full bg-mint-500/10 px-2.5 py-1 text-[11px] font-semibold text-mint-600">
             Автомат
           </span>
         )}
@@ -45,8 +45,8 @@ function Column({
               className={clsx(
                 'rounded-xl border px-4 py-3 text-sm',
                 isAfter
-                  ? 'border-brand-500/25 bg-ink-900/70 text-white/85'
-                  : 'border-ink-700 bg-ink-900/60 text-white/60',
+                  ? 'border-brand-200 bg-white text-ink-800'
+                  : 'border-ink-200 bg-white text-ink-600',
               )}
             >
               {step}
@@ -54,7 +54,7 @@ function Column({
             {i < steps.length - 1 && (
               <div className="flex justify-center py-1">
                 <ArrowDown
-                  className={clsx('h-3.5 w-3.5', isAfter ? 'text-brand-400' : 'text-white/20')}
+                  className={clsx('h-3.5 w-3.5', isAfter ? 'text-brand-400' : 'text-ink-400')}
                   aria-hidden="true"
                 />
               </div>

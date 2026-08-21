@@ -30,7 +30,7 @@ export function Hero() {
       <div className="container-x relative grid items-center gap-14 pb-20 pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:pb-28 lg:pt-20">
         <div>
           <span className="eyebrow">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-300" />
+            <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
             Early access — тун удахгүй
           </span>
 
@@ -56,13 +56,13 @@ export function Hero() {
               return (
                 <li
                   key={step}
-                  className="rounded-xl border border-ink-700 bg-ink-850/60 px-3 py-3 text-center"
+                  className="rounded-xl border border-ink-200 bg-ink-50 px-3 py-3 text-center"
                 >
                   <StepIcon
-                    className={`mx-auto h-4 w-4 ${i === 3 ? 'text-mint-400' : 'text-brand-300'}`}
+                    className={`mx-auto h-4 w-4 ${i === 3 ? 'text-mint-600' : 'text-brand-600'}`}
                     aria-hidden="true"
                   />
-                  <span className="mt-2 block text-[11px] leading-tight text-white/60">{step}</span>
+                  <span className="mt-2 block text-[11px] leading-tight text-ink-600">{step}</span>
                 </li>
               );
             })}
@@ -71,7 +71,7 @@ export function Hero() {
 
         <div className="relative">
           <div
-            className="pointer-events-none absolute -inset-6 rounded-full bg-brand-500/20 blur-3xl"
+            className="pointer-events-none absolute -inset-6 rounded-full bg-brand-100 blur-3xl"
             aria-hidden="true"
           />
           <div className="relative">
@@ -79,10 +79,10 @@ export function Hero() {
               <ChatMockup bubbles={CONVERSATION} title="Ариунаа" subtitle="Messenger чат" />
             </PhoneFrame>
 
-            <div className="absolute -bottom-4 -left-2 hidden rounded-2xl border border-ink-600 bg-ink-850/95 px-4 py-3 shadow-card backdrop-blur sm:block lg:-left-8">
-              <p className="text-[10px] uppercase tracking-wider text-white/40">Захиалга</p>
-              <p className="text-sm font-bold text-brand-200">178,000₮</p>
-              <p className="mt-0.5 flex items-center gap-1 text-[11px] text-mint-400">
+            <div className="absolute -bottom-4 -left-2 hidden rounded-2xl border border-ink-200 bg-white/95 px-4 py-3 shadow-card backdrop-blur sm:block lg:-left-8">
+              <p className="text-[10px] uppercase tracking-wider text-ink-500">Захиалга</p>
+              <p className="text-sm font-bold text-brand-700">178,000₮</p>
+              <p className="mt-0.5 flex items-center gap-1 text-[11px] text-mint-600">
                 <CheckCircle2 className="h-3 w-3" /> Төлбөр баталгаажсан
               </p>
             </div>

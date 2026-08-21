@@ -56,19 +56,19 @@ export function EarlyAccess() {
           <h2 className="mt-5 h2">{EARLY_ACCESS.title}</h2>
           <p className="mt-5 lead">{EARLY_ACCESS.description}</p>
 
-          <p className="mt-8 flex items-start gap-2.5 text-sm text-white/50">
-            <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-brand-300" />
+          <p className="mt-8 flex items-start gap-2.5 text-sm text-ink-500">
+            <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
             {EARLY_ACCESS.note}
           </p>
         </div>
 
         {status === 'done' ? (
           <div className="card grid place-items-center p-10 text-center">
-            <span className="grid h-14 w-14 place-items-center rounded-full bg-mint-400/15 text-mint-400">
+            <span className="grid h-14 w-14 place-items-center rounded-full bg-mint-500/10 text-mint-600">
               <CheckCircle2 className="h-7 w-7" />
             </span>
             <h3 className="mt-5 text-xl font-bold">Бүртгэл амжилттай!</h3>
-            <p className="mt-2 max-w-sm text-sm text-white/55">
+            <p className="mt-2 max-w-sm text-sm text-ink-600">
               Та waitlist-д бүртгэгдлээ{position ? ` — ${position}-р дугаартай` : ''}. PayBot-ийн
               нээлтийн мэдээллийг таны үлдээсэн холбоо барих мэдээллээр хүргэнэ.
             </p>
@@ -123,7 +123,7 @@ export function EarlyAccess() {
                 id="businessType"
                 name="businessType"
                 defaultValue=""
-                className={clsx('input', errors.businessType && 'border-rose-500/60')}
+                className={clsx('input', errors.businessType && 'border-rose-400')}
                 aria-invalid={Boolean(errors.businessType)}
               >
                 <option value="" disabled>
@@ -136,18 +136,18 @@ export function EarlyAccess() {
                 ))}
               </select>
               {errors.businessType && (
-                <p className="mt-1.5 text-xs text-rose-400">{errors.businessType}</p>
+                <p className="mt-1.5 text-xs text-rose-600">{errors.businessType}</p>
               )}
             </div>
 
-            {message && <p className="text-sm text-rose-400">{message}</p>}
+            {message && <p className="text-sm text-rose-600">{message}</p>}
 
             <button type="submit" disabled={status === 'sending'} className="btn-primary w-full">
               {status === 'sending' && <Loader2 className="h-4 w-4 animate-spin" />}
               {EARLY_ACCESS.cta}
             </button>
 
-            <p className="text-center text-xs text-white/35">
+            <p className="text-center text-xs text-ink-500">
               Бүртгүүлснээр таны мэдээллийг зөвхөн PayBot-ийн нээлтийн мэдээлэл хүргэхэд ашиглана.
             </p>
           </form>
@@ -184,9 +184,9 @@ function Field({
         inputMode={inputMode}
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
-        className={clsx('input', error && 'border-rose-500/60')}
+        className={clsx('input', error && 'border-rose-400')}
       />
-      {error && <p className="mt-1.5 text-xs text-rose-400">{error}</p>}
+      {error && <p className="mt-1.5 text-xs text-rose-600">{error}</p>}
     </div>
   );
 }

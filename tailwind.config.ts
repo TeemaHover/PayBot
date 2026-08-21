@@ -5,14 +5,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        /* Neutral ramp for the light theme — 50 lightest, 950 darkest. */
         ink: {
-          950: '#050A12',
-          900: '#08111E',
-          850: '#0C1727',
-          800: '#111E31',
-          700: '#1A2B44',
-          600: '#253956',
-          500: '#33496A',
+          50: '#F7FAFD',
+          100: '#EFF4FA',
+          200: '#DEE8F2',
+          300: '#C6D6E6',
+          400: '#8397AD',
+          500: '#5E7389',
+          600: '#4F6478',
+          700: '#3A4C5E',
+          800: '#243545',
+          900: '#132433',
+          950: '#0A1723',
         },
         /* Brand blue — taken from the PayBot logo (#3B9BE0). */
         brand: {
@@ -31,18 +36,20 @@ const config: Config = {
           300: '#8FE3FF',
           400: '#4FD1F5',
           500: '#17B4E0',
+          600: '#0E85A8',
         },
         mint: {
           400: '#3DDC97',
           500: '#1FBF7C',
+          600: '#0E8B58',
         },
       },
       fontFamily: {
         sans: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        glow: '0 0 70px -14px rgba(59, 155, 224, 0.6)',
-        card: '0 1px 0 0 rgba(255,255,255,0.04) inset, 0 20px 40px -24px rgba(0,0,0,0.9)',
+        glow: '0 18px 50px -22px rgba(59, 155, 224, 0.65)',
+        card: '0 1px 2px 0 rgba(16, 40, 64, 0.05), 0 16px 32px -22px rgba(16, 40, 64, 0.35)',
       },
       keyframes: {
         marquee: {

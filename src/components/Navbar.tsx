@@ -23,7 +23,7 @@ export function Navbar() {
       className={clsx(
         'sticky top-0 z-50 border-b transition-colors',
         scrolled
-          ? 'border-ink-700 bg-ink-950/85 backdrop-blur-xl'
+          ? 'border-ink-200 bg-white/85 backdrop-blur-xl'
           : 'border-transparent bg-transparent',
       )}
     >
@@ -35,7 +35,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-lg px-3.5 py-2 text-sm text-white/70 transition hover:text-white"
+              className="rounded-lg px-3.5 py-2 text-sm text-ink-700 transition hover:text-ink-900"
             >
               {link.label}
             </Link>
@@ -49,7 +49,7 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="rounded-lg border border-ink-700 p-2 md:hidden"
+          className="rounded-lg border border-ink-200 p-2 md:hidden"
           aria-label="Цэс нээх"
           aria-expanded={open}
         >
@@ -58,14 +58,14 @@ export function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-ink-700 bg-ink-950 md:hidden">
+        <div className="border-t border-ink-200 bg-white md:hidden">
           <div className="container-x space-y-1 py-4">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-lg px-3 py-2.5 text-sm text-white/80 hover:bg-ink-800"
+                className="block rounded-lg px-3 py-2.5 text-sm text-ink-800 hover:bg-ink-100"
               >
                 {link.label}
               </Link>

@@ -51,14 +51,14 @@ export function ProductShowcase() {
               className={clsx(
                 'flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition',
                 s.key === active
-                  ? 'border-brand-500/50 bg-brand-500/10 text-brand-100'
-                  : 'border-ink-700 bg-ink-850 text-white/60 hover:border-ink-500 hover:text-white',
+                  ? 'border-brand-400 bg-brand-50 text-brand-700'
+                  : 'border-ink-200 bg-ink-50 text-ink-600 hover:border-ink-300 hover:text-ink-900',
               )}
             >
               <span
                 className={clsx(
                   'grid h-5 w-5 place-items-center rounded-md text-[11px] font-bold',
-                  s.key === active ? 'bg-brand-500 text-white' : 'bg-ink-700 text-white/50',
+                  s.key === active ? 'bg-brand-700 text-white' : 'bg-ink-100 text-ink-500',
                 )}
               >
                 {s.letter}
@@ -71,11 +71,11 @@ export function ProductShowcase() {
         <div className="mt-10 grid items-center gap-10 lg:grid-cols-2">
           <div>
             <h3 className="text-2xl font-bold tracking-tight">{item.title}</h3>
-            <p className="mt-4 max-w-lg leading-relaxed text-white/60">{item.body}</p>
+            <p className="mt-4 max-w-lg leading-relaxed text-ink-600">{item.body}</p>
 
             <ul className="mt-8 space-y-2.5">
               {DETAILS[item.key].map((d) => (
-                <li key={d} className="flex items-start gap-2.5 text-sm text-white/70">
+                <li key={d} className="flex items-start gap-2.5 text-sm text-ink-700">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-400" />
                   {d}
                 </li>
@@ -85,7 +85,7 @@ export function ProductShowcase() {
 
           <div className="relative">
             <div
-              className="pointer-events-none absolute -inset-4 rounded-3xl bg-brand-500/10 blur-2xl"
+              className="pointer-events-none absolute -inset-4 rounded-3xl bg-brand-50 blur-2xl"
               aria-hidden="true"
             />
             <div className="relative">

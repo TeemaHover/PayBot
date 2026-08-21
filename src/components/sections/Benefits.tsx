@@ -3,7 +3,7 @@ import { Icon } from '@/components/Icon';
 
 export function Benefits() {
   return (
-    <section id="benefits" className="section border-y border-ink-800 bg-ink-900/30">
+    <section id="benefits" className="section border-y border-ink-200 bg-ink-50">
       <div className="container-x">
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Давуу тал</span>
@@ -20,11 +20,11 @@ export function Benefits() {
                   : 'card p-6'
               }
             >
-              <span className="grid h-11 w-11 place-items-center rounded-xl border border-brand-500/25 bg-brand-500/10 text-brand-200">
+              <span className="grid h-11 w-11 place-items-center rounded-xl border border-brand-200 bg-brand-50 text-brand-700">
                 <Icon name={b.icon} className="h-5 w-5" />
               </span>
               <h3 className="mt-4 text-base font-semibold">{b.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/55">{b.body}</p>
+              <p className="mt-2 text-sm leading-relaxed text-ink-600">{b.body}</p>
             </article>
           ))}
         </div>

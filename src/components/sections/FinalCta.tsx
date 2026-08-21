@@ -4,7 +4,7 @@ import { FINAL_CTA } from '@/lib/content';
 
 export function FinalCta() {
   return (
-    <section className="relative overflow-hidden border-t border-ink-800">
+    <section className="relative overflow-hidden border-t border-ink-200">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_100%_at_50%_100%,rgba(59,155,224,0.28),transparent_70%)]"
         aria-hidden="true"
