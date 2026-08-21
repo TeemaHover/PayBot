@@ -153,9 +153,15 @@ docker exec paybot-db psql -U paybot -d paybot -c "SELECT * FROM WAIT_LIST;"
    ```
 
    (Railway-ийн reference хувьсагч — Postgres service-ийнхээ нэрийг тааруулна.)
-4. Deploy. Эхний хүсэлт дээр `WAIT_LIST` хүснэгт автоматаар үүснэ.
+4. **Networking → Generate Domain** дээр target port-ыг **8080** гэж өгнө.
+5. Deploy. Эхний хүсэлт дээр `WAIT_LIST` хүснэгт автоматаар үүснэ.
 
-`PORT`-ыг Railway өөрөө өгдөг ба container түүнийг дагаж `0.0.0.0` дээр сонсоно.
+> **Порт (чухал):** Railway контейнерт `PORT=8080` гэж өөрөө оруулдаг ба энэ нь Dockerfile доторх
+> `ENV PORT=3000`-г дарж бичнэ. Тиймээс апп 8080 дээр сонсоно. Домэйны target port-ыг 3000 гэж
+> үлдээвэл `502 Application failed to respond` алдаа гарна. Локал docker-compose дээр PORT
+> дарагдахгүй тул 3000 хэвээр ажиллана.
+
+Одоогийн deploy: https://paybot-production-c1ef.up.railway.app
 
 ---
 
