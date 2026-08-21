@@ -3,9 +3,9 @@
 import { useState } from 'react';
 import clsx from 'clsx';
 import { CheckCircle2, Loader2, ShieldCheck } from 'lucide-react';
-import { EARLY_ACCESS, BUSINESS_TYPES } from '@/lib/content';
+import { EARLY_ACCESS } from '@/lib/content';
 
-type FieldErrors = Partial<Record<'name' | 'business' | 'phone' | 'email' | 'businessType', string>>;
+type FieldErrors = Partial<Record<'name' | 'socialPage' | 'phone', string>>;
 
 export function EarlyAccess() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'done'>('idle');
@@ -82,63 +82,29 @@ export function EarlyAccess() {
           </div>
         ) : (
           <form onSubmit={submit} className="card space-y-4 p-6 sm:p-8" noValidate>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <Field
-                id="name"
-                label={EARLY_ACCESS.fields.name}
-                placeholder="Б. Ариунаа"
-                error={errors.name}
-              />
-              <Field
-                id="business"
-                label={EARLY_ACCESS.fields.business}
-                placeholder="Ариун Шоп"
-                error={errors.business}
-              />
-            </div>
+            <Field
+              id="name"
+              label={EARLY_ACCESS.fields.name}
+              placeholder="Б. Ариунаа"
+              error={errors.name}
+            />
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <Field
-                id="phone"
-                label={EARLY_ACCESS.fields.phone}
-                placeholder="9911-2233"
-                type="tel"
-                inputMode="tel"
-                error={errors.phone}
-              />
-              <Field
-                id="email"
-                label={EARLY_ACCESS.fields.email}
-                placeholder="ariunaa@shop.mn"
-                type="email"
-                error={errors.email}
-              />
-            </div>
+            <Field
+              id="socialPage"
+              label={EARLY_ACCESS.fields.socialPage}
+              placeholder="facebook.com/ariunshop эсвэл @ariunshop"
+              inputMode="text"
+              error={errors.socialPage}
+            />
 
-            <div>
-              <label className="label" htmlFor="businessType">
-                {EARLY_ACCESS.fields.businessType}
-              </label>
-              <select
-                id="businessType"
-                name="businessType"
-                defaultValue=""
-                className={clsx('input', errors.businessType && 'border-rose-400')}
-                aria-invalid={Boolean(errors.businessType)}
-              >
-                <option value="" disabled>
-                  Сонгоно уу
-                </option>
-                {BUSINESS_TYPES.map((t) => (
-                  <option key={t} value={t}>
-                    {t}
-                  </option>
-                ))}
-              </select>
-              {errors.businessType && (
-                <p className="mt-1.5 text-xs text-rose-600">{errors.businessType}</p>
-              )}
-            </div>
+            <Field
+              id="phone"
+              label={EARLY_ACCESS.fields.phone}
+              placeholder="9911-2233"
+              type="tel"
+              inputMode="tel"
+              error={errors.phone}
+            />
 
             {message && <p className="text-sm text-rose-600">{message}</p>}
 

@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: paybot-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: paybot
+      POSTGRES_PASSWORD: paybot
+      POSTGRES_DB: paybot
+    ports:
+      # Хостын 5432-г Windows-ийн native PostgreSQL эзэлсэн байж болзошгүй тул 5433 ашиглана.
+      # DBeaver гэх мэт хэрэгслээс: localhost:5433
+      - '5433:5432'
+    volumes:
+      - paybot-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U paybot -d paybot']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build: .
+    container_name: paybot-web
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgres://paybot:paybot@db:5432/paybot
+    ports:
+      - '3000:3000'
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  paybot-pgdata:

@@ -256,16 +256,6 @@ export const BENEFITS = {
 
 /* --------------------------- 10. Early Access --------------------------- */
 
-export const BUSINESS_TYPES = [
-  'Онлайн дэлгүүр',
-  'Онлайн сургалт',
-  'Ресторан',
-  'Салон / Nail',
-  'Зочид буудал',
-  'Дижитал бүтээгдэхүүн',
-  'Бусад',
-];
-
 export const EARLY_ACCESS = {
   title: 'PayBot-ийг хамгийн түрүүнд туршаарай.',
   description:
@@ -274,10 +264,8 @@ export const EARLY_ACCESS = {
   note: 'Бид PayBot-ийн нээлтийн талаарх мэдээллийг таны бүртгүүлсэн холбоо барих мэдээллээр хүргэнэ.',
   fields: {
     name: 'Нэр',
-    business: 'Бизнесийн нэр',
+    socialPage: 'Бизнесийн сошиал хуудас',
     phone: 'Утасны дугаар',
-    email: 'Имэйл',
-    businessType: 'Бизнесийн төрөл',
   },
 };
 

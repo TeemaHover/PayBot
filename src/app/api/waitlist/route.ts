@@ -1,11 +1,16 @@
 import { NextResponse } from 'next/server';
 import { addEntry, countEntries, normalizePhone } from '@/lib/waitlist';
-import { BUSINESS_TYPES } from '@/lib/content';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 export async function GET() {
-  return NextResponse.json({ count: countEntries() });
+  try {
+    return NextResponse.json({ count: await countEntries() });
+  } catch (err) {
+    console.error('[waitlist] count failed', err);
+    return NextResponse.json({ error: 'Өгөгдлийн сантай холбогдож чадсангүй.' }, { status: 503 });
+  }
 }
 
 export async function POST(req: Request) {
@@ -15,30 +20,31 @@ export async function POST(req: Request) {
   }
 
   const name = (body.name ?? '').trim();
-  const business = (body.business ?? '').trim();
-  const email = (body.email ?? '').trim();
-  const businessType = (body.businessType ?? '').trim();
+  const socialPage = (body.socialPage ?? '').trim();
   const phone = normalizePhone(body.phone ?? '');
 
   const errors: Record<string, string> = {};
   if (name.length < 2) errors.name = 'Нэрээ бүрэн бичнэ үү.';
-  if (business.length < 2) errors.business = 'Бизнесийн нэрээ бичнэ үү.';
+  if (socialPage.length < 3) errors.socialPage = 'Бизнесийн хуудасны хаягаа бичнэ үү.';
   if (!phone.valid) errors.phone = 'Утасны дугаар 8 оронтой байх ёстой.';
-  if (!/^\S+@\S+\.\S+$/.test(email)) errors.email = 'Зөв имэйл хаяг оруулна уу.';
-  if (!BUSINESS_TYPES.includes(businessType)) errors.businessType = 'Бизнесийн төрлөө сонгоно уу.';
 
   if (Object.keys(errors).length > 0) {
     return NextResponse.json({ error: 'Мэдээллээ шалгана уу.', errors }, { status: 400 });
   }
 
-  const result = addEntry({ name, business, phone: phone.value, email, businessType });
+  try {
+    const result = await addEntry({ name, socialPage, phone: phone.value });
 
-  if (result.duplicate) {
-    return NextResponse.json(
-      { error: 'Энэ имэйл хаягаар аль хэдийн бүртгүүлсэн байна.' },
-      { status: 409 },
-    );
+    if (result.duplicate) {
+      return NextResponse.json(
+        { error: 'Энэ утасны дугаараар аль хэдийн бүртгүүлсэн байна.' },
+        { status: 409 },
+      );
+    }
+
+    return NextResponse.json({ ok: true, position: result.position }, { status: 201 });
+  } catch (err) {
+    console.error('[waitlist] insert failed', err);
+    return NextResponse.json({ error: 'Серверийн алдаа. Дахин оролдоно уу.' }, { status: 500 });
   }
-
-  return NextResponse.json({ ok: true, position: result.position }, { status: 201 });
 }
