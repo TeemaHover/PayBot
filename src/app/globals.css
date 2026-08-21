@@ -13,8 +13,8 @@ html {
 
 html,
 body {
-  background-color: #070711;
-  color: #E8E8F5;
+  background-color: #050A12;
+  color: #E6EEF8;
 }
 
 body {
@@ -22,25 +22,25 @@ body {
 }
 
 ::selection {
-  background: rgba(143, 115, 255, 0.35);
+  background: rgba(59, 155, 224, 0.35);
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #2a2a48 transparent;
+  scrollbar-color: #253956 transparent;
 }
 *::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 *::-webkit-scrollbar-thumb {
-  background: #23233f;
+  background: #1A2B44;
   border-radius: 999px;
   border: 3px solid transparent;
   background-clip: content-box;
 }
 *::-webkit-scrollbar-thumb:hover {
-  background: #33335a;
+  background: #33496A;
   background-clip: content-box;
 }
 
@@ -73,7 +73,7 @@ body {
   }
   .btn-primary {
     @apply btn bg-gradient-to-r from-brand-400 to-brand-600 px-6 py-3 text-white
-           shadow-[0_10px_40px_-12px_rgba(116,80,245,0.8)] hover:from-brand-300 hover:to-brand-500;
+           shadow-[0_10px_40px_-12px_rgba(42,130,198,0.75)] hover:from-brand-300 hover:to-brand-500;
   }
   .btn-ghost {
     @apply btn border border-ink-600 bg-ink-800/60 px-6 py-3 text-white/85
@@ -119,9 +119,9 @@ body {
 /* Ambient background glow used behind hero + CTA sections */
 .aurora {
   background-image:
-    radial-gradient(45% 55% at 20% 12%, rgba(116, 80, 245, 0.28), transparent 65%),
-    radial-gradient(40% 50% at 82% 22%, rgba(56, 214, 245, 0.16), transparent 65%),
-    radial-gradient(60% 60% at 50% 100%, rgba(116, 80, 245, 0.14), transparent 70%);
+    radial-gradient(45% 55% at 20% 12%, rgba(59, 155, 224, 0.30), transparent 65%),
+    radial-gradient(40% 50% at 82% 22%, rgba(79, 209, 245, 0.16), transparent 65%),
+    radial-gradient(60% 60% at 50% 100%, rgba(42, 130, 198, 0.16), transparent 70%);
 }
 
 .grid-lines {

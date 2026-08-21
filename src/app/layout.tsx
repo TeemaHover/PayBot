@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { BRAND } from '@/lib/content';
@@ -19,6 +19,10 @@ export const metadata: Metadata = {
     locale: 'mn_MN',
     type: 'website',
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#3B9BE0',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
